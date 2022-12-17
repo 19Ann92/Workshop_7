@@ -53,16 +53,16 @@ void PrintArray(int[,] inputArray)
 string ArithmeticMeanOfColumn(int[,] array)
 {
     string b = String.Empty;
-    double resalt = 1;
+    double resalt = 0;
     for (int j = 0; j < array.GetLength(1); j++)
     {
         for (int i = 0; i < array.GetLength(0); i++)
         {
-            resalt *= array[i,j];
+            resalt += array[i,j];
         }
         resalt /= array.GetLength(0);
-        b = b + Math.Round(resalt, 2).ToString() + "; ";
-        resalt = 1;
+        b += Math.Round(resalt, 2).ToString() + "; ";
+        resalt = 0;
     }
     return b;
 }
